@@ -1,21 +1,25 @@
 import React from 'react';
 
-import Shelf from '../shelf-row';
+import Shelf from '../shelf';
 
 const App = () => (
   <div className="App">
-    <Shelf group={{
-        author: 'JK Rowling',
-        books: [
-          {
-            id: 2,
-            name: 'Harry Potter',
-            author: 'JK Rowling',
-            rating: 3,
-            like: false,
-          },
-        ],
-      }}
+    <Shelf groups={
+      [
+        {
+          author: 'JK Rowling',
+          books: [
+            {
+              id: 2,
+              name: 'Harry Potter',
+              author: 'JK Rowling',
+              rating: 3,
+              like: false,
+            },
+          ],
+        },
+      ]
+    }
     />
   </div>
 );
