@@ -7,7 +7,8 @@
   font-size: 32px;
   font-weight: 100; 
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-left: 32px;
+  padding-bottom: 16px;
 }
 
 .ShelfRow-books {
@@ -17,4 +18,5 @@
   flex-wrap: wrap 4;
   margin-right: 8px;
   margin-bottom: 8px;
+  background-color: #F9883A;
 }
