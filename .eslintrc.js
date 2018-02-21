@@ -5,4 +5,7 @@ module.exports = {
     "browser": true,
     "jest": true,
   },
+  "rules": {
+    'react/forbid-prop-types': 0
+  }
 };
