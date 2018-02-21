@@ -3,6 +3,8 @@ import React from 'react';
 import shelfRowShape from '../../models/shelf';
 import Book from '../book';
 
+import './shelf-row.css';
+
 class ShelfRow extends React.Component {
   constructor(props) {
     super(props);

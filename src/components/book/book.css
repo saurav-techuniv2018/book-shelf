@@ -1,0 +1,39 @@
+.Book {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 4px black;
+  box-shadow: 1px -1px 4px black;
+  box-shadow: -1px 1px 4px black;
+  box-shadow: -1px -1px 4px black;
+  border-radius: 8px;
+  width: 240px;
+  margin: 32px;
+}
+
+.Book-image {
+  max-width:240px;
+  width: auto;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.Book-data {
+  font-family: Helvetica, sans-serif;
+  padding: 16px;
+}
+
+.Book-name {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.Book-rating {
+  font-size: 32px;
+  font-weight: 100;
+  margin: 8px auto;
+}
+
+.Book-fav-icon {
+  display: inline-block;
+} 

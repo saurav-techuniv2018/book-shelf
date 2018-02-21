@@ -1,6 +1,9 @@
 import React from 'react';
 
 import bookShape from '../../models/book';
+import Icon from '../icon';
+
+import './book.css';
 
 class Book extends React.Component {
   constructor(props) {
@@ -13,16 +16,20 @@ class Book extends React.Component {
 
   render = () => (
     <div className="Book">
-      <div className="Book-image-container">
-        <img
-          src="https://images-na.ssl-images-amazon.com/images/I/51VNlzbfpXL._SX331_BO1,204,203,200_.jpg"
-          alt="book-cover"
-        />
-      </div>
+      <img
+        className="Book-image"
+        src="https://images-na.ssl-images-amazon.com/images/I/51VNlzbfpXL._SX331_BO1,204,203,200_.jpg"
+        alt="book-cover"
+      />
       <div className="Book-data">
-        <div>{this.props.book.name}</div>
-        <div>{this.props.book.rating}</div>
-        <div>{this.props.book.author}</div>
+        <Icon
+          className="Book-fav-icon"
+          icon="&#xE87D;"
+          onClick={() => this.props.toggleLike()}
+        />
+        <div className="Book-name" >{this.props.book.name}</div>
+        <div className="Book-rating">{this.props.book.rating}</div>
+        <div className="Book-author">{this.props.book.author}</div>
       </div>
     </div>
   );
