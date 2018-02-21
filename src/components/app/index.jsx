@@ -1,9 +1,15 @@
 import React from 'react';
 
+import Header from '../header';
 import Shelf from '../shelf';
 
 const App = () => (
   <div className="App">
+    <Header
+      before="The"
+      value="Book"
+      after="Shelf"
+    />
     <Shelf groups={
       [
         {
