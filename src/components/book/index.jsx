@@ -1,15 +1,13 @@
 import React from 'react';
 
+import bookShape from '../../models/book';
+
 class Book extends React.Component {
   constructor(props) {
     super(props);
 
-    this.book = {
-      id: 2,
-      name: 'Harry Potter',
-      author: 'JK Rowling',
-      rating: 3,
-      like: false,
+    Book.propTypes = {
+      book: bookShape.isRequired,
     };
   }
 
@@ -22,9 +20,9 @@ class Book extends React.Component {
         />
       </div>
       <div className="Book-data">
-        <div>{this.book.name}</div>
-        <div>{this.book.rating}</div>
-        <div>{this.book.author}</div>
+        <div>{this.props.book.name}</div>
+        <div>{this.props.book.rating}</div>
+        <div>{this.props.book.author}</div>
       </div>
     </div>
   );
