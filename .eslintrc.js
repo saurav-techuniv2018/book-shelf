@@ -2,6 +2,7 @@ module.exports = {
   "parser": "babel-eslint",
   "extends": "airbnb",
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true,
   },
 };
