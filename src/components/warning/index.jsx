@@ -1,6 +1,10 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
 
+import Icon from '../icon';
+
+import './warning.css';
+
 class Warning extends React.Component {
   constructor(props) {
     super(props);
@@ -17,11 +21,19 @@ class Warning extends React.Component {
 
   render = () => (
     <div className="Warning">
-      <pre>{this.props.value}</pre>
-      <Icon
-        onClick={() => this.props.onClick()}
-        icon="&#xE5D5;"
-      />
+      <pre className="Warning-header">{this.props.value}</pre>
+      <div className="Warning-refresh">
+        <Icon
+          onClick={() => this.props.onClick()}
+          icon="&#xE5D5;"
+          style={{
+            'font-size': '64px',
+            color: 'white',
+          }}
+        />
+      </div>
     </div>
   )
 }
+
+export default Warning;

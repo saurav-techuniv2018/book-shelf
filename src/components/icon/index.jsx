@@ -23,14 +23,12 @@ class Icon extends React.Component {
       onKeyPress={() => this.props.onClick()}
       role="button"
       tabIndex={0}
-      style={this.props.style}
     >
-      <span >
-        <i
-          className="material-icons"
-        >{this.props.icon}
-        </i>
-      </span>
+      <i
+        className="material-icons"
+        style={this.props.style}
+      >{this.props.icon}
+      </i>
     </div>
   );
 }

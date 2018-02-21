@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from '../header';
 import Shelf from '../shelf';
+import Warning from '../warning';
 import httpRequest from '../../lib/data-fetch';
 import actionGenerator from '../../redux/actions';
 
@@ -39,12 +40,24 @@ class App extends React.Component {
 
   render = () => (
     <div className="App">
-      <Header
-        before="The"
-        value="Book"
-        after="Shelf"
-      />
-      <Shelf groups={this.props.groups} />
+      <div className="App-header">
+        <Header
+          before="The"
+          value="Book"
+          after="Shelf"
+        />
+      </div>
+      <div className="App-main">
+        {
+          (this.props.groups.length === 0) ?
+            <Warning
+              value={'Oops! No books found! \nImport them now?'}
+              className="App-warning"
+            />
+            :
+            <Shelf groups={this.props.groups} />
+        }
+      </div>
     </div>
   );
 }
