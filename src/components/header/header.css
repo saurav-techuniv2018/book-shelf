@@ -8,3 +8,10 @@
   font-size: 32px;
   margin: auto 8px;
 }
+
+.Header {
+  background-color: #9F4141;
+  display: inline-block;
+  padding: 16px;
+  border-bottom-right-radius: 8px;
+}

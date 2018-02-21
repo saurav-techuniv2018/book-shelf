@@ -6,6 +6,8 @@ import Shelf from '../shelf';
 import httpRequest from '../../lib/data-fetch';
 import actionGenerator from '../../redux/actions';
 
+import './app.css';
+
 class App extends React.Component {
   static mapStateToProps = state => ({
     groups: state.books.groups,
