@@ -22,7 +22,10 @@ class Header extends React.Component {
 
   render = () => (
     <div className="Header">
-      {this.props.before}<span className="Header-em">{this.props.value}</span>{this.props.after}
+      <div>
+        {this.props.before}<span className="Header-em">{this.props.value}</span>{this.props.after}
+      </div>
+      <hr className="Header-line" />
     </div>
   )
 }

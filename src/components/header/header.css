@@ -1,11 +1,12 @@
-.Header, .Header-em{
+.Header, .Header-em {
   font-family: Helvetica, sans-serif;
   font-weight: 100;
   font-size: 24px;
+  color: #fff;
 }
 
 .Header-em {
-  font-size: 32px;
+  font-size: 36px;
   margin: auto 8px;
 }
 
@@ -13,5 +14,15 @@
   background-color: #9F4141;
   display: inline-block;
   padding: 16px;
+  padding-right: 28px;
   border-bottom-right-radius: 8px;
+}
+
+.Header-line {
+  height: 2px;
+  background-color: #C79191;
+  border: 1px solid #C79191;
+  border-radius: 4px;
+  margin: 0;
+  width: 105%;
 }
