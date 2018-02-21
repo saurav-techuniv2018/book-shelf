@@ -1,0 +1,23 @@
+{
+  "name": "book-shelf",
+  "version": "1.0.0",
+  "description": "React app to display book details.",
+  "main": "src/index.js",
+  "repository": "git@github.com:saurav-techuniv2018/book-shelf.git",
+  "author": "Saurav Sahu <sauravsahu.12@live.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^4.18.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
+
+
