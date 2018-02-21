@@ -12,30 +12,32 @@ import './app.css';
 class App extends React.Component {
   static mapStateToProps = state => ({
     groups: state.books.groups,
+    page: state.navigation.page,
   });
 
-  static mapDispatchToProps = dispatch => ({
+  static mapDispatchToProps = (dispatch, ownProps) => ({
+    switchPage: page => dispatch(actionGenerator('SWITCH_PAGE', page)),
     putBooks: groupedBooks => dispatch(actionGenerator('PUT_GROUPED_BOOKS', groupedBooks)),
   });
 
-  componentDidMount() {
-    httpRequest('/books/likes', 'GET')
-      .then((responseData) => {
-        if (Object.keys(responseData.data.groups).length === 0) {
-          httpRequest('/books', 'POST')
-            .then((externalApiCallResult) => {
-              if (externalApiCallResult.statusCode === 200) {
-                httpRequest('/books/likes', 'GET')
-                  .then((groupedBooksData) => {
-                    this.props.putBooks(groupedBooksData.data.groups);
-                  });
-              }
-            });
-        } else {
-          const groupedBooksData = responseData.data.groups;
-          this.props.putBooks(groupedBooksData);
-        }
-      });
+  constructor(props) {
+    super(props);
+
+    this.checkBooks = () => {
+      httpRequest('/books/likes', 'GET')
+        .then((responseData) => {
+          if (Object.keys(responseData.data.groups).length === 0) {
+            this.props.switchPage('WARNING');
+          } else {
+            this.props.putBooks(responseData.data.groups);
+            this.props.switchPage('SHELF');
+          }
+        });
+    };
+  }
+
+  componentDidMount = () => {
+    this.checkBooks();
   }
 
   render = () => (
@@ -49,10 +51,18 @@ class App extends React.Component {
       </div>
       <div className="App-main">
         {
-          (this.props.groups.length === 0) ?
+          (this.props.page === 'WARNING') ?
             <Warning
               value={'Oops! No books found! \nImport them now?'}
               className="App-warning"
+              onClick={() => {
+                httpRequest('/books', 'POST')
+                  .then((data) => {
+                    if (data.statusCode === 200) {
+                      this.checkBooks();
+                    }
+                  });
+              }}
             />
             :
             <Shelf groups={this.props.groups} />
