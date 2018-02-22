@@ -12,7 +12,7 @@
 }
 
 .Book-image {
-  max-width:240px;
+  max-width: 240px;
   width: auto;
   height: auto;
   border-top-left-radius: 8px;
@@ -22,6 +22,7 @@
 .Book-data {
   font-family: Helvetica, sans-serif;
   padding: 16px;
+  padding-top: 0;
 }
 
 .Book-name {
@@ -37,4 +38,4 @@
 
 .Book-fav-icon {
   display: inline-block;
-} 
+}

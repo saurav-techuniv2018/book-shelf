@@ -1,6 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
+import './icon.css';
+
 class Icon extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,8 @@ class Icon extends React.Component {
 
   render = () => (
     <div
-      className="MaterialIcon-container"
+      className="Icon-container"
+      style={this.props.containerStyle}
       onClick={() => this.props.onClick()}
       onKeyPress={() => this.props.onClick()}
       role="button"

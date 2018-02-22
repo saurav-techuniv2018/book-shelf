@@ -38,21 +38,37 @@ class Book extends React.Component {
     <div className="Book">
       <img
         className="Book-image"
-        src="https://images-na.ssl-images-amazon.com/images/I/51VNlzbfpXL._SX331_BO1,204,203,200_.jpg"
+        src="https://c1.staticflickr.com/2/1580/26218877845_d5752c7432_m.jpg"
         alt="book-cover"
       />
       <div className="Book-data">
         <Icon
           className="Book-fav-icon"
           icon="&#xE87D;"
-          style={(this.props.book.like) ? { color: 'red' } : { color: 'grey' }}
+          style={{
+            paddingTop: '4px',
+            color: '#fff',
+          }}
+          containerStyle={{
+            textAlign: 'center',
+            display: 'inline-block',
+            position: 'relative',
+            top: '-24px',
+            left: '80%',
+            padding: '8px',
+            width: '32px',
+            height: '32px',
+            borderRadius: '32px',
+            alignContent: 'center',
+            backgroundColor: (this.props.book.like) ? '#E41912' : 'grey',
+          }}
           onClick={() => this.props.toggleLike(
             this.props.book.id,
             !this.props.book.like,
             this.props.book.author,
           )}
         />
-        <div className="Book-name" >{this.props.book.name}</div>
+        <div cslassName="Book-name" >{this.props.book.name}</div>
         <div className="Book-rating">{this.props.book.rating}</div>
         <div className="Book-author">{this.props.book.author}</div>
       </div>
