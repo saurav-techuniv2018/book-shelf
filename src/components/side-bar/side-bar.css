@@ -1,0 +1,27 @@
+.SideBar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.SideBar-icons {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.SideBar-brand {
+  font-family: Helvetica, sans-serif;
+  font-stretch: ultra-condensed;
+  text-transform: capitalize;
+  font-size: 36px;
+  font-weight: 800;
+  align-self: center;
+  margin-top: 12px;
+}
+
+.SideBar-icon {
+  padding: 4px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+}

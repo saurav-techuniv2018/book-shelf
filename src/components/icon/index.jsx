@@ -7,12 +7,13 @@ class Icon extends React.Component {
 
     Icon.propTypes = {
       icon: PropTypes.string.isRequired,
-      onClick: PropTypes.func.isRequired,
+      onClick: PropTypes.func,
       style: PropTypes.object,
     };
 
     Icon.defaultProps = {
       style: {},
+      onClick: () => { },
     };
   }
 

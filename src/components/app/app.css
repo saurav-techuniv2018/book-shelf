@@ -5,7 +5,7 @@ body {
 .App {
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .App-header {
@@ -16,6 +16,14 @@ body {
   height: 100%;
 }
 
-.App-warning {
-  
+.App-nav {
+  flex-grow: 1;
+  background-color: #2E3A48;
+  color: #fff;
+  width: 72px;
+  padding: 8px;
+}
+
+.App-content-root {
+  overflow-y: scroll;
 }

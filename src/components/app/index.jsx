@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../header';
 import Shelf from '../shelf';
 import Warning from '../warning';
+import SideBar from '../side-bar';
 import httpRequest from '../../lib/data-fetch';
 import actionGenerator from '../../redux/actions';
 
@@ -42,31 +43,44 @@ class App extends React.Component {
 
   render = () => (
     <div className="App">
-      <div className="App-header">
-        <Header
-          before="The"
-          value="Book"
-          after="Shelf"
+      <div className="App-nav" >
+        <SideBar
+          brand="bs"
+          icons={
+            [
+              { icon: '\uE5D5' },
+              { icon: '\uE8B8' },
+            ]
+          }
         />
       </div>
-      <div className="App-main">
-        {
-          (this.props.page === 'WARNING') ?
-            <Warning
-              value={'Oops! No books found! \nImport them now?'}
-              className="App-warning"
-              onClick={() => {
-                httpRequest('/books', 'POST')
-                  .then((data) => {
-                    if (data.statusCode === 200) {
-                      this.checkBooks();
-                    }
-                  });
-              }}
-            />
-            :
-            <Shelf groups={this.props.groups} />
-        }
+      <div className="App-content-root">
+        <div className="App-header">
+          <Header
+            before="The"
+            value="Book"
+            after="Shelf"
+          />
+        </div>
+        <div className="App-main">
+          {
+            (this.props.page === 'WARNING') ?
+              <Warning
+                value={'Oops! No books found! \nImport them now?'}
+                className="App-warning"
+                onClick={() => {
+                  httpRequest('/books', 'POST')
+                    .then((data) => {
+                      if (data.statusCode === 200) {
+                        this.checkBooks();
+                      }
+                    });
+                }}
+              />
+              :
+              <Shelf groups={this.props.groups} />
+          }
+        </div>
       </div>
     </div>
   );
