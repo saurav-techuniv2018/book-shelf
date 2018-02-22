@@ -17,13 +17,12 @@ body {
 }
 
 .App-nav {
-  flex-grow: 1;
   background-color: #2E3A48;
   color: #fff;
   width: 72px;
-  padding: 8px;
 }
 
 .App-content-root {
+  flex-grow: 1;
   overflow-y: scroll;
 }

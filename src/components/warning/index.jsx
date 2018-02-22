@@ -27,7 +27,7 @@ class Warning extends React.Component {
           onClick={() => this.props.onClick()}
           icon="&#xE5D5;"
           style={{
-            'font-size': '64px',
+            fontSize: '64px',
             color: 'white',
           }}
         />
