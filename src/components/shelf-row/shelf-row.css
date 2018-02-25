@@ -1,9 +1,9 @@
 .ShelfRow-author {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 32px;
-  font-weight: 100;
+  font-weight: 200;
   padding-top: 32px;
-  padding-left: 32px;
+  padding-left: 64px;
   padding-bottom: 16px;
 }
 
@@ -17,4 +17,5 @@
 
 .ShelfRow-books-container {
   background-color: #F9883A;
+  padding-left: 32px;
 }
