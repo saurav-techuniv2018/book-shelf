@@ -1,7 +1,7 @@
 .ShelfRow-author {
   font-family: Helvetica, sans-serif;
   font-size: 32px;
-  font-weight: 100; 
+  font-weight: 100;
   padding-top: 32px;
   padding-left: 32px;
   padding-bottom: 16px;
@@ -12,5 +12,9 @@
   flex-direction: row;
   flex-flow: row wrap;
   flex-wrap: wrap 4;
+  max-width: 1216px;
+}
+
+.ShelfRow-books-container {
   background-color: #F9883A;
 }

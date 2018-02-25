@@ -19,13 +19,15 @@ class ShelfRow extends React.Component {
       <div className="ShelfRow-author">
         {this.props.group.author}
       </div>
-      <div className="ShelfRow-books">
-        {this.props.group.books.map(book => (
-          <Book
-            key={book.id}
-            book={book}
-          />
+      <div className="ShelfRow-books-container">
+        <div className="ShelfRow-books">
+          {this.props.group.books.map(book => (
+            <Book
+              key={book.id}
+              book={book}
+            />
           ))}
+        </div>
       </div>
 
     </div>
