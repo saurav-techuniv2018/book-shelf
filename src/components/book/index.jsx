@@ -38,7 +38,7 @@ class Book extends React.Component {
     <div className="Book">
       <img
         className="Book-image"
-        src="https://c1.staticflickr.com/2/1580/26218877845_d5752c7432_m.jpg"
+        src="//s1.ticketm.net/img/tat/dam/a/f2c/b6495b49-6898-4015-9a7c-7155c91b3f2c_132301_CUSTOM.jpg"
         alt="book-cover"
       />
       <div className="Book-data">
@@ -61,6 +61,7 @@ class Book extends React.Component {
             borderRadius: '32px',
             alignContent: 'center',
             backgroundColor: (this.props.book.like) ? '#E41912' : 'grey',
+            boxShadow: '-1px 1px 2px black',
           }}
           onClick={() => this.props.toggleLike(
             this.props.book.id,
