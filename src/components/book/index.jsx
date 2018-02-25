@@ -69,7 +69,7 @@ class Book extends React.Component {
             this.props.book.author,
           )}
         />
-        <div cslassName="Book-name" >{this.props.book.name}</div>
+        <div className="Book-name" >{this.props.book.name}</div>
         <div className="Book-rating">{this.props.book.rating}</div>
         <div className="Book-author">{this.props.book.author}</div>
       </div>

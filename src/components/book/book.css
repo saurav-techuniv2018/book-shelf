@@ -23,14 +23,25 @@
 }
 
 .Book-name {
-  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-stretch: condensed;
+  margin-top: -16px;
   font-weight: 400;
+  height: 3em;
 }
 
 .Book-rating {
   font-size: 32px;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 100;
   margin: 8px auto;
+}
+
+.Book-author {
+  text-align: end;
+  font-family: 'Helvetica Neue';
+  font-stretch: condensed;
+  text-transform: uppercase;
 }
 
 .Book-fav-icon {
