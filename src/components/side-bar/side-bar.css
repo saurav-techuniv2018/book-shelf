@@ -12,11 +12,10 @@
 }
 
 .SideBar-brand {
-  font-family: 'Helvetica Neue Condensed Black', sans-serif;
-  font-stretch: ultra-condensed;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-stretch: condensed;
   text-transform: capitalize;
   font-size: 36px;
-  font-weight: 800;
   align-self: center;
   margin-top: 20px;
 }
