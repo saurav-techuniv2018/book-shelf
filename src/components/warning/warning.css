@@ -5,6 +5,7 @@
   padding: 16px;
   border: 2px solid black;
   border-radius: 16px;
+  min-width: 370px;
 }
 
 .Warning-refresh {
