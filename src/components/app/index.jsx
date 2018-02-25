@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 
 import Header from '../header';
@@ -9,6 +10,7 @@ import httpRequest from '../../lib/data-fetch';
 import actionGenerator from '../../redux/actions';
 
 import './app.css';
+import shelf from '../../models/shelf';
 
 class App extends React.Component {
   static mapStateToProps = state => ({
@@ -16,30 +18,26 @@ class App extends React.Component {
     page: state.navigation.page,
   });
 
-  static mapDispatchToProps = (dispatch, ownProps) => ({
+  static mapDispatchToProps = dispatch => ({
     switchPage: page => dispatch(actionGenerator('SWITCH_PAGE', page)),
     putBooks: groupedBooks => dispatch(actionGenerator('PUT_GROUPED_BOOKS', groupedBooks)),
   });
 
-  constructor(props) {
-    super(props);
-
-    this.checkBooks = () => {
-      httpRequest('/books/likes', 'GET')
-        .then((responseData) => {
-          if (Object.keys(responseData.data.groups).length === 0) {
-            this.props.switchPage('WARNING');
-          } else {
-            this.props.putBooks(responseData.data.groups);
-            this.props.switchPage('SHELF');
-          }
-        });
-    };
-  }
-
   componentDidMount = () => {
     this.checkBooks();
   }
+
+  checkBooks = () => {
+    httpRequest('/books/likes', 'GET')
+      .then((responseData) => {
+        if (Object.keys(responseData.data.groups).length === 0) {
+          this.props.switchPage('WARNING');
+        } else {
+          this.props.putBooks(responseData.data.groups);
+          this.props.switchPage('SHELF');
+        }
+      });
+  };
 
   render = () => (
     <div className="App">
@@ -85,5 +83,12 @@ class App extends React.Component {
     </div>
   );
 }
+
+App.propTypes = {
+  switchPage: PropTypes.func.isRequired,
+  putBooks: PropTypes.func.isRequired,
+  page: PropTypes.string.isRequired,
+  groups: PropTypes.arrayOf(PropTypes.shape(shelf)).isRequired,
+};
 
 export default connect(App.mapStateToProps, App.mapDispatchToProps)(App);

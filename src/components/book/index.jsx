@@ -25,15 +25,6 @@ class Book extends React.Component {
     },
   });
 
-  constructor(props) {
-    super(props);
-
-    Book.propTypes = {
-      book: bookShape.isRequired,
-      toggleLike: PropTypes.func.isRequired,
-    };
-  }
-
   render = () => (
     <div className="Book">
       <img
@@ -76,5 +67,10 @@ class Book extends React.Component {
     </div>
   );
 }
+
+Book.propTypes = {
+  book: bookShape.isRequired,
+  toggleLike: PropTypes.func.isRequired,
+};
 
 export default connect(undefined, Book.mapDispatchToProps)(Book);

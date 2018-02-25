@@ -3,38 +3,35 @@ import { PropTypes } from 'prop-types';
 
 import './icon.css';
 
-class Icon extends React.Component {
-  constructor(props) {
-    super(props);
+const Icon = props => (
+  <div
+    className="Icon-container"
+    style={props.containerStyle}
+    onClick={() => props.onClick()}
+    onKeyPress={() => props.onClick()}
+    role="button"
+    tabIndex={0}
+  >
+    <i
+      className="material-icons"
+      style={props.style}
+    >{props.icon}
+    </i>
+  </div>
+);
 
-    Icon.propTypes = {
-      icon: PropTypes.string.isRequired,
-      onClick: PropTypes.func,
-      style: PropTypes.object,
-    };
 
-    Icon.defaultProps = {
-      style: {},
-      onClick: () => { },
-    };
-  }
+Icon.propTypes = {
+  icon: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  style: PropTypes.object,
+  containerStyle: PropTypes.object,
+};
 
-  render = () => (
-    <div
-      className="Icon-container"
-      style={this.props.containerStyle}
-      onClick={() => this.props.onClick()}
-      onKeyPress={() => this.props.onClick()}
-      role="button"
-      tabIndex={0}
-    >
-      <i
-        className="material-icons"
-        style={this.props.style}
-      >{this.props.icon}
-      </i>
-    </div>
-  );
-}
+Icon.defaultProps = {
+  style: {},
+  onClick: () => { },
+  containerStyle: {},
+};
 
 export default Icon;
