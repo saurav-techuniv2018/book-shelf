@@ -53,6 +53,7 @@ class Book extends React.Component {
             alignContent: 'center',
             backgroundColor: (this.props.book.like) ? '#E41912' : 'grey',
             boxShadow: '-1px 1px 2px black',
+            cursor: 'pointer',
           }}
           onClick={() => this.props.toggleLike(
             this.props.book.id,
